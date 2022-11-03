@@ -10,8 +10,8 @@ export default component$(() => {
     <div class='min-w-full bg-slate-50  absolute flex' >
         <h1 class=' text-white absolute text-center min-w-full mt-6 text-2xl font-semibold'>¿Quien eligira el lugar de la luna de miel? 🤔</h1>
         
-        <Side color="blue-200" img="/man.png" name="David Fajardo" alias="Jefito" description={msm} href="/david"/>
-        <Side color="red-200" img="/woman.png" name="Milena Nose" alias="Jefita" description={msm} href="/Milena"/>
+        <Side color="blue-200" img="/man.png" name="David Fajardo" alias="Jefito" description={msm} href="David"/>
+        <Side color="red-200" img="/woman.png" name="Milena Nose" alias="Jefita" description={msm} href="Milena"/>
         
         
 
