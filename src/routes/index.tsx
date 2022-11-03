@@ -1,135 +1,20 @@
-import { component$ } from '@builder.io/qwik';
+import { component$ , $ } from '@builder.io/qwik';
 import type { DocumentHead } from '@builder.io/qwik-city';
 import { Link } from '@builder.io/qwik-city';
+import {Side} from '../components/index/Side';
+
 
 export default component$(() => {
+  const msm = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto accusantium saepe, animi, perferendis nemo blanditiis omnis mollitia quis molestiae fugit rerum sequi tempora accusamus distinctio libero, quam eligendi ullam illum?'
   return (
-    <div>
-      <h1>
-        Welcome to Qwik <span class="lightning">⚡️</span>
-      </h1>
+    <div class='min-w-full bg-slate-50  absolute flex' >
+        <h1 class=' text-white absolute text-center min-w-full mt-6 text-2xl font-semibold'>¿Quien eligira el lugar de la luna de miel? 🤔</h1>
+        
+        <Side color="blue-200" img="/man.png" name="David Fajardo" alias="Jefito" description={msm} href="/david"/>
+        <Side color="red-200" img="/woman.png" name="Milena Nose" alias="Jefita" description={msm} href="/Milena"/>
+        
+        
 
-      <ul>
-        <li>
-          Check out the <code>src/routes</code> directory to get started.
-        </li>
-        <li>
-          Add integrations with <code>npm run qwik add</code>.
-        </li>
-        <li>
-          More info about development in <code>README.md</code>
-        </li>
-      </ul>
-
-      <h2>Commands</h2>
-
-      <table class="commands">
-        <tr>
-          <td>
-            <code>npm run dev</code>
-          </td>
-          <td>Start the dev server and watch for changes.</td>
-        </tr>
-        <tr>
-          <td>
-            <code>npm run preview</code>
-          </td>
-          <td>Production build and start preview server.</td>
-        </tr>
-        <tr>
-          <td>
-            <code>npm run build</code>
-          </td>
-          <td>Production build.</td>
-        </tr>
-        <tr>
-          <td>
-            <code>npm run qwik add</code>
-          </td>
-          <td>Select an integration to add.</td>
-        </tr>
-      </table>
-
-      <h2>Add Integrations</h2>
-
-      <table class="commands">
-        <tr>
-          <td>
-            <code>npm run qwik add cloudflare-pages</code>
-          </td>
-          <td>
-            <a href="https://developers.cloudflare.com/pages" target="_blank">
-              Cloudflare Pages Server
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <code>npm run qwik add express</code>
-          </td>
-          <td>
-            <a href="https://expressjs.com/" target="_blank">
-              Nodejs Express Server
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <code>npm run qwik add netlify-edge</code>
-          </td>
-          <td>
-            <a href="https://docs.netlify.com/" target="_blank">
-              Netlify Edge Functions
-            </a>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <code>npm run qwik add static-node</code>
-          </td>
-          <td>
-            <a
-              href="https://qwik.builder.io/qwikcity/static-site-generation/overview/"
-              target="_blank"
-            >
-              Static Site Generation (SSG)
-            </a>
-          </td>
-        </tr>
-      </table>
-
-      <h2>Community</h2>
-
-      <ul>
-        <li>
-          <span>Questions or just want to say hi? </span>
-          <a href="https://qwik.builder.io/chat" target="_blank">
-            Chat on discord!
-          </a>
-        </li>
-        <li>
-          <span>Follow </span>
-          <a href="https://twitter.com/QwikDev" target="_blank">
-            @QwikDev
-          </a>
-          <span> on Twitter</span>
-        </li>
-        <li>
-          <span>Open issues and contribute on </span>
-          <a href="https://github.com/BuilderIO/qwik" target="_blank">
-            GitHub
-          </a>
-        </li>
-        <li>
-          <span>Watch </span>
-          <a href="https://qwik.builder.io/media/" target="_blank">
-            Presentations, Podcasts, Videos, etc.
-          </a>
-        </li>
-      </ul>
-      <Link class="mindblow" href="/flower">
-        Blow my mind 🤯
-      </Link>
     </div>
   );
 });
