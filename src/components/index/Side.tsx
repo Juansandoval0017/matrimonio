@@ -13,7 +13,7 @@ interface SideProps {
 
 export const Side = component$(({color,name,alias,description,img,href} : SideProps ) => {
     
-   console.log(`w-1/2 min-h-screen flex bg-${color} items-center justify-center p-4`)
+
 
     return (
         <section class={`w-1/2 min-h-screen flex bg-${color} items-center justify-center p-4`}>

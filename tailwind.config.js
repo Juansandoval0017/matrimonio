@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns:{
-        'board': 'repeat(80, minmax(0, 1fr))',
+        '40': 'repeat(40, minmax(0, 1fr))',
       },
       gridTemplateRows:{
-        'board': 'repeat(40, minmax(0, 0.6rem))',
+        '20': 'repeat(20, minmax(0, 0.6rem))',
       },
       backgroundImage:{
         'board': 'url("/board.jpg")',
