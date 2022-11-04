@@ -3,7 +3,7 @@ import { component$} from '@builder.io/qwik';
 
 interface SideProps {
     name: string;
-    color: string;
+    section: string;
     alias: string;
     description: string;
     href: string;
@@ -11,12 +11,17 @@ interface SideProps {
 
 }
 
-export const Side = component$(({color,name,alias,description,img,href} : SideProps ) => {
-    
+
+
+
+
+export const Side = component$(({section,name,alias,description,img,href} : SideProps ) => {
+
+
 
 
     return (
-        <section class={`w-1/2 min-h-screen flex bg-${color} items-center justify-center p-4`}>
+        <section class={section}>
           
             
             <img src={img} alt="foto" class="w-2/5 h-2/5" />
@@ -25,9 +30,7 @@ export const Side = component$(({color,name,alias,description,img,href} : SidePr
                 <p class=" font-thin text-justify text-white" >{description}</p>
 
                 <a href={`game/${href}`} class="mt-2" >
-                <button class={`w-2/5 place-self-center border-2
-                hover:bg-inherit hover:text-white transition duration-500 ease-in-out 
-                border-white bg-white text-${color} rounded-md`}>Team {name.split(" ",1)}</button>
+                <button class="w-2/5 place-self-center border-2 hover:bg-inherit hover:text-white transition duration-500 ease-in-out border-white bg-white text-blue-200 rounded-md">Team {name.split(" ",1)}</button>
                 </a>
             </article>
             

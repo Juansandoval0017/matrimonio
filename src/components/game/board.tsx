@@ -22,7 +22,7 @@ export const Board = component$((props: {game : GameData,numOfCols: number,numOf
   
 
     return (
-        <div key={game.seconds}  class="w-2/6  h-1/4 overflow-hidden ">
+        <div  class="md:w-2/6 w-full md:h-1/4 overflow-hidden ">
         
             <div class={` bg-gray-500 grid grid-cols-40  grid-rows-20 w-full  bg-board bg-contain  `}>
 
@@ -34,7 +34,7 @@ export const Board = component$((props: {game : GameData,numOfCols: number,numOf
 
                 const color = isSnake ? "bg-trasparent" : isFood ? "bg-red-500" : "bg-black";
 
-                return <div class={`  ${color} `}></div>
+                return <div class={color}></div>
                 
                 }))}
 

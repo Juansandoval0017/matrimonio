@@ -7,16 +7,17 @@ interface Person {
     [key: string]: {
         color: string;
         emoji: string;
+
     }
 }
 
 export const Person_Data : Person = {
     "David" : {
-        color: "blue-200",
+        color: "min-w-full min-h-screen  flex items-center flex-col bg-blue-200 absolute",
         emoji: "👨🏻‍💻",
     } ,
     "Milena":{
-        color: "red-200",
+        color: "min-w-full min-h-screen  flex items-center flex-col bg-red-200 absolute",
         emoji:"👩‍⚕️"
     }
 }
@@ -32,9 +33,9 @@ export default component$(() => {
 
     return (
         
-        <div className={`min-w-full min-h-screen  flex items-center flex-col bg-${color} absolute`} >
+        <div className={color} >
 
-            <h1 class="text-4xl mt-4 font-semibold text-white absolute justify-self-center" >Bien Vamos  Apoyar a {person} {emoji}</h1>
+            <h1 class="text-4xl mt-4 font-semibold text-white absolute justify-self-center text-center" >Bien Vamos  Apoyar a {person} {emoji}</h1>
 
             <Game />
 

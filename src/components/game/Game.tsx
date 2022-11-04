@@ -74,7 +74,7 @@ export const Game = component$(() => {
 
     return (
 
-        <div class="w-10/12 flex justify-center items-center min-h-screen gap-5">
+        <div key={game.seconds} class="w-10/12 flex flex-col md:flex-row justify-center items-center min-h-screen gap-5">
             <Board  game={game} numOfCols={size.numOfCols} numOfRows={size.numOfRows} />
             <Controls goodbye$={goodbye$} changeDirection$={changeDirection$} direction={game.direction} />
             

@@ -29,7 +29,7 @@ export const Controls = component$((props: Props) => {
 
 
   return(
-    <div  class="w-2/6 flex justify-center" >
+    <div  class="w-full lg:w-2/6 flex justify-center" >
 
       <section class=" w-2/6 grid grid-cols-3 grid-rows-3 border-collapse">
           <span></span>
