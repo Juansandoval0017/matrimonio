@@ -2,7 +2,7 @@ import { component$, useStyles$ } from '@builder.io/qwik';
 import { QwikCity, RouterOutlet, ServiceWorkerRegister } from '@builder.io/qwik-city';
 import { RouterHead } from './components/router-head/router-head';
 
-import globalStyles from './output.css';
+import globalStyles from './global.css';
 
 export default component$(() => {
   /**

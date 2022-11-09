@@ -37,7 +37,7 @@ export default component$(() => {
 
             <h1 class="text-4xl mt-4 font-semibold text-white absolute justify-self-center text-center" >Bien Vamos  Apoyar a {person} {emoji}</h1>
 
-            <Game />
+            <Game name={person} />
 
            
         </div>

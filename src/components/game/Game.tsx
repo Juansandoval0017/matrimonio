@@ -3,8 +3,9 @@ import { Board } from "./board";
 import { Controls } from "./Controls";
 import { GameData ,Size } from "../../interfaces/game/interface";
 import { updatePosition } from "~/controller/game/events";
+import { Modal } from "./Modal";
 
-export const Game = component$(() => {
+export const Game = component$((props: { name: string }) => {
 
     const size = useStore<Size>({
         numOfCols: 40,
@@ -59,13 +60,27 @@ export const Game = component$(() => {
 
                 updatePosition(game,size);
             }
-            else{
-                clearInterval(interval);
-            }
-            
+           
         }, 100);
         return () => clearInterval(interval);
     })
+
+    const reset$ = $(() => {
+
+        const initX = Math.floor(Math.random() * size.numOfCols);
+        const initY = Math.floor(Math.random() * size.numOfRows);
+
+        const initFoodX = Math.floor(Math.random() * size.numOfCols);
+        const initFoodY = Math.floor(Math.random() * size.numOfRows);
+
+
+        game.snake = [{x:initX,y:initY}, {x:initX + 1,y:initY},{x:initX + 2,y:initY},{x: initX + 3,y:initY}  ];
+        game.food = { x: initFoodX, y: initFoodY };
+        game.score = 0;
+        game.seconds = 0;
+        game.direction = "";
+        game.gameOver = false;
+    });
 
 
 
@@ -73,12 +88,16 @@ export const Game = component$(() => {
 
 
     return (
-
-        <div key={game.seconds} class="w-10/12 flex flex-col md:flex-row justify-center items-center min-h-screen gap-5">
+        <>
+        <div key={game.seconds} class="w-10/12 flex flex-col md:flex-row justify-evenly md:justify-center items-center min-h-screen gap-5 pt-12">
             <Board  game={game} numOfCols={size.numOfCols} numOfRows={size.numOfRows} />
             <Controls goodbye$={goodbye$} changeDirection$={changeDirection$} direction={game.direction} />
             
+            
         </div>
+        <Modal Reset$={reset$} gameOver={game.gameOver} score={game.score} name={props.name} />
+        </>
+        
 
     )
 });

@@ -23,16 +23,20 @@ export const Board = component$((props: {game : GameData,numOfCols: number,numOf
 
     return (
         <div  class="md:w-2/6 w-full md:h-1/4 overflow-hidden ">
+
+            
+          
         
             <div class={` bg-gray-500 grid grid-cols-40  grid-rows-20 w-full  bg-board bg-contain  `}>
-
+             
+                
                 {grid.map((rows, i) => rows.map((col, j) => {
                 const stat = game.snake.find((snake) => snake.x === j && snake.y === i);
                 if(stat){}
                 const isSnake = stat ? true : false;
                 const isFood = game.food.x === j && game.food.y === i;
 
-                const color = isSnake ? "bg-trasparent" : isFood ? "bg-red-500" : "bg-black";
+                const color = isSnake ? "bg-trasparent border" : isFood ? "bg-red-500" : "bg-black";
 
                 return <div class={color}></div>
                 
@@ -40,7 +44,7 @@ export const Board = component$((props: {game : GameData,numOfCols: number,numOf
 
 
             </div>
-            <span>{game.gameOver? "game Over": "in Game"}</span>
+            
             
         </div>
         )
