@@ -27,6 +27,9 @@ app.use(compression());
 // https://expressjs.com/en/starter/static-files.html
 app.use(`/build`, express.static(buildDir, { immutable: true, maxAge: '1y' }));
 app.use(express.static(distDir, { redirect: false }));
+app.get('/api/hello', function(req, res) {
+  res.send('hello world');
+});
 
 // Use Qwik City's page and endpoint request handler
 app.use(router);
